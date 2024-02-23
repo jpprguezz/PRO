@@ -6,9 +6,9 @@
 def run(values: list) -> int:
     # TU CÓDIGO AQUÍ
     max_value = values[0]
-    for num in values:
-        if num > max_value:
-            max_value = num
+    for value in values[1:]:
+        if value > max_value:
+            max_value = value
 
     return max_value
 
