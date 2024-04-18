@@ -18,7 +18,7 @@ class Plane:
     def open_doors(self):
         if self.doors is True:
             print("Puertas abiertas")
-           
+
     def wheels_deployed(self):
         if self.wheels is True:
             print("Ruedas desplegadas")
@@ -26,6 +26,3 @@ class Plane:
     def wheels_retracted(self):
         if self.wheels is False:
             print("Ruedas guardadas")
-
-
-        
