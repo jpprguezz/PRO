@@ -65,7 +65,6 @@ class IntegerQueue:
         - El primer elemento del fichero corresponde con el HEAD de la cola.
         - Si la cola se llena al ir añadiendo elementos habrá que expandir con los valores
         por defecto'''
-        ...
 
     def __getitem__(self, index: int) -> int:
         '''Devuelve el elemento de la cola en el índice indicado'''
