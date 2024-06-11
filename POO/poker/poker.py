@@ -34,20 +34,14 @@ class Card:
 
         - self.suit deberá almacenar el palo de la carta '♣◆❤♠'.
         - self.value deberá almacenar el valor de la carta (1-13)'''
-        if suit not in Card.SUITS:
-            raise InvalidCardError(f"{repr(suit)} is not a supported suit")
-        if isinstance(value, str):
-            raise InvalidCardError(f"{repr(value)} is not a supported symbol")
-        if not Card.A_VALUE <= value <= Card.K_VALUE:
-            raise InvalidCardError(f"{repr(value)} is not a supported value")
-        self.value = value
-        self.suit = suit4
+        
+
 
     @property
     def cmp_value(self) -> int:
         '''Devuelve el valor (numérico) de la carta para comparar con otras.
         Tener en cuenta el AS.'''
-        return self.value if self.value != Card.A_VALUE else Card.K_VALUE + 1   
+       
 
     def __repr__(self):
         '''Devuelve el glifo de la carta'''
