@@ -25,6 +25,7 @@ Diagrama de clases:
 
 class DbHandler:
     """Clase que representa un manejador a la base de datos."""
+
     def __init__(self, db_path: str = DB_PATH):
         """Crea la conexión a la base de datos (factoría Row) y el cursor correspondiente.
         También crea atributos homónimos a parámetros"""
@@ -34,23 +35,19 @@ class DbHandler:
 
     def create_db(self) -> None:
         """Crea la base de datos y sus tablas"""
-
         sql1 = '''CREATE TABLE activity (
     id INTEGER PRIMARY KEY,
     sender TEXT,
     recipient TEXT,
     message TEXT
 )'''
-
         sql2 = '''CREATE TABLE access (
     phone_number TEXT PRIMARY KEY,
     pin TEXT,
     puk TEXT
 )'''
-
         self.cur.execute(sql1)
         self.cur.execute(sql2)
-        self.con.commit()
 
 
 class SMS(DbHandler):
@@ -61,16 +58,11 @@ class SMS(DbHandler):
         Esta clase hereda de DbHandler...
 
         NO HAY QUE ALMACENAR NADA EN LA BASE DE DATOS"""
-        super().__init__()
-        self.sender = sender
-        self.recipient = recipient
-        self.message = message
+        pass
 
     def send(self) -> None:
         """Simula el envío de este SMS (self) guardando todos sus campos en la tabla activity"""
-        sql = 'INSERT INTO activity(sender, recipient, message) VALUES ss(?, ?, ?)'
-        self.cur.execute(sql, (self.sender, self.recipient, self.message))
-        self.con.commit()
+        pass
 
     def __str__(self):
         """Representa un objeto de tipo SMS de la siguiente forma:
@@ -79,11 +71,7 @@ class SMS(DbHandler):
         ---
         <mensaje>
         """
-#         return f"""From: {self.sender}
-# To: {self.recipient}
-# ---
-# {self.message}
-#         """
+        pass
 
 
 class SIM(DbHandler):
